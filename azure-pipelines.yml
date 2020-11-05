@@ -9,7 +9,7 @@ resources:
 - repo: self
 
 variables:
-  ImageName: 'naginagesh/azure-pipeline-image-test:$(Build.BuildId)'
+  ImageName: 'naginagesh/azure-pipeline-image-test'
 
 stages:
 - stage: Build
