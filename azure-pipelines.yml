@@ -31,9 +31,6 @@ stages:
       displayName: Push image
       inputs:
         containerRegistry: |
-          $(dockerHub)
-        repository: $(imageName)
+          nagesh-docker-registry
+        repository: azure-pipeline-test-img
         command: push
-        tags: |
-          test1
-          test2      
