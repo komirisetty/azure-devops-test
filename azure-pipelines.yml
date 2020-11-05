@@ -9,7 +9,7 @@ resources:
 - repo: self
 
 variables:
-  ImageName: 'naginagesh/azure-pipeline-image-test'
+  imageName: 'naginagesh/azure-pipeline-image-test'
 
 stages:
 - stage: Build
@@ -25,11 +25,14 @@ stages:
       inputs:
         command: build
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
-        imageName: '$(ImageName)' 
+        repository: $(imageName) 
     - task: Docker@2
       displayName: Push image
       inputs:
         containerRegistry: |
           nagesh-docker-registry
-        repository: '$(ImageName)'
+        repository: $(imageName)
         command: push
+        tags: |
+          test1
+          test2
