@@ -33,6 +33,4 @@ stages:
           nagesh-docker-registry
         repository: $(imageName)
         command: push
-        tags: |
-          test1
-          test2
+        tags: $(Build.BuildId)
